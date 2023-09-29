@@ -1,0 +1,33 @@
+{
+  "name": "quiz-webapp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/csam1/quiz-webapp.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/csam1/quiz-webapp/issues"
+  },
+  "homepage": "https://github.com/csam1/quiz-webapp#readme",
+  "dependencies": {
+    "next": "^13.5.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "20.7.2",
+    "@types/react": "^18.2.23",
+    "@types/react-dom": "^18.2.8",
+    "typescript": "^5.2.2"
+  }
+}
