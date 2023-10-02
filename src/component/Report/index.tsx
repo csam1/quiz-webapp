@@ -1,6 +1,6 @@
 import { useRouter } from "next/navigation";
 import { useContext } from "react";
-import { GlobalContext } from "../../../context";
+import { GlobalContext } from "../../context";
 import styles from "../Quiz/styles.module.scss";
 import reportStyles from "./styles.module.scss";
 
