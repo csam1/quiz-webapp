@@ -31,5 +31,11 @@ export default function reducer(
         isQuizInProgress: false
       };
     }
+    case "RESTART_QUIZ": {
+      return {
+        ...state,
+        isQuizInProgress: true
+      }
+    }
   }
 }
