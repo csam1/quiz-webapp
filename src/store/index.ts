@@ -1,4 +1,4 @@
-import { Question, StoreActions, StoreState } from "./types";
+import { Question, Reports, StoreActions, StoreState } from "./types";
 
 export const initialState: StoreState = {
   questions: [],
@@ -21,6 +21,14 @@ export default function reducer(
         ...state,
         questions,
         isQuizInProgress: true
+      };
+    }
+    case "SUBMIT_ANSWER": {
+      const reports = action.payload as Reports;
+      return {
+        ...state,
+        reports,
+        isQuizInProgress: false
       };
     }
   }
