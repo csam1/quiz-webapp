@@ -10,3 +10,16 @@ export type Reports = {
   correctAnswer: number;
   incorrectAnswer: number;
 };
+
+export interface StoreState {
+  questions: Question[];
+  reports: Reports;
+  isQuizInProgress: boolean;
+}
+
+export type Actions = "START_QUIZ" | "SUBMIT_ANSWER" | "RESTART_QUIZ";
+
+export interface StoreActions {
+    type: Actions,
+    payload?: unknown;
+}
