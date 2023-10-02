@@ -1,0 +1,21 @@
+.startContainer {
+  background: linear-gradient(
+    180deg,
+    rgba(175, 156, 243, 0) 7.92%,
+    #af9cf3 86.48%
+  );
+  background-blend-mode: multiply;
+  height: 100vh;
+}
+
+.upraisedLogo {
+  width: 291px;
+  height: 70px;
+}
+
+.startSection {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
