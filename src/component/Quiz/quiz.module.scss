@@ -1,0 +1,103 @@
+.quizLayout {
+  width: 100%;
+  background: #af9cf3;
+  background-blend-mode: multiply;
+  height: 100vh;
+}
+.bottomSheetWrapper {
+  background: white;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  height: 80%;
+}
+.quizContainer {
+  padding: 15px;
+}
+.questionNumberWrapper {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+.questionsNumberStatus {
+  display: flex;
+  border-radius: 50px;
+  padding: 24px;
+  margin-top: -40px;
+  background: white;
+}
+.currentQuestionNumber {
+  margin: 0;
+  font-size: 48px;
+  font-weight: 900;
+  align-self: end;
+}
+.totalQuestion {
+  margin: 0;
+  font-size: 32px;
+  font-weight: 900;
+  align-self: end;
+  margin-bottom: 2px;
+  color: #999;
+}
+.questions {
+  color: #000;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 900;
+  margin-bottom: 20px;
+}
+.radioBtn {
+  opacity: 0.0829846;
+  margin: 0px 0px 0px 40px;
+  color: #000;
+  border-color: black;
+  cursor: pointer;
+}
+.activeRadioBtn {
+  opacity: 1;
+  margin: 0px 0px 0px 30px;
+}
+.options {
+  display: flex;
+  border-radius: 20px;
+  background: #f3f4fa;
+  margin-bottom: 20px;
+}
+.optionsLabel {
+  padding: 30px 20px;
+}
+.activeOptions {
+  border: 4.444px solid #44b77b;
+}
+.cTAWrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.startBtn {
+  bottom: 40px;
+}
+.cTAbtnStyles {
+  position: fixed;
+  width: 92%;
+  height: 80px;
+  border-radius: 80px;
+  background-color: #ff3b3f;
+  color: #ffffff;
+  border: none;
+  font-weight: 900;
+  font-size: 24px;
+  cursor: pointer;
+  bottom: 2%;
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
+.imgContainer {
+  width: 75%;
+  height: 250px;
+}
