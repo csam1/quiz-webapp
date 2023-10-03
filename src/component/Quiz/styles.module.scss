@@ -93,7 +93,7 @@
   cursor: pointer;
   bottom: 2%;
   &:disabled {
-    opacity: 0.5;
+    background-color: #c7c3c2;
     cursor: not-allowed;
   }
 }

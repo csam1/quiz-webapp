@@ -1,15 +1,17 @@
 import { useRouter } from "next/navigation";
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import { GlobalContext } from "../../context";
 import styles from "../Quiz/styles.module.scss";
 import reportStyles from "./styles.module.scss";
 
 const Report = () => {
   const {
-    state: { reports, questions },
+    state: { reports },
     dispatch,
   } = useContext(GlobalContext);
+  
   const router = useRouter();
+
   const handleStartAgain = () => {
     dispatch({ type: "RESTART_QUIZ" });
     router.push("/quiz");

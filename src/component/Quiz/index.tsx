@@ -16,12 +16,16 @@ const Quiz = () => {
   const [duration, setDuration] = useState(0);
   const router = useRouter();
   useEffect(() => {
+    let intervalID;
     if (!isQuizInProgress) {
       router.push("/");
     }
-    setInterval(() => {
+    intervalID = setInterval(() => {
       setDuration((time) => time + 1);
     }, 1000);
+    return () => {
+      clearInterval(intervalID);
+    };
   }, []);
 
   const handleOptionSelect = (
@@ -30,7 +34,7 @@ const Quiz = () => {
     isMultiSelect: boolean
   ) => {
     if (e.target.checked) {
-      if (selectedOption) {
+      if (selectedOption && isMultiSelect) {
         setSelectedOption([...selectedOption, option]);
       } else {
         setSelectedOption([option]);
