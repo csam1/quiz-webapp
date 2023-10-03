@@ -8,16 +8,12 @@ import styles from "./styles.module.scss";
 
 const Quiz = () => {
   const {
-    state: { questions, isQuizInProgress },
+    state: { questions, isQuizInProgress, userId },
     dispatch,
   } = useContext(GlobalContext);
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [selectedOption, setSelectedOption] = useState<number[]>([]);
   const [duration, setDuration] = useState(0);
-  const [answers, setAnswers] = useState({
-    correctAnswers: 0,
-    incorrectAnswers: 0,
-  });
   const router = useRouter();
   useEffect(() => {
     if (!isQuizInProgress) {
@@ -28,7 +24,11 @@ const Quiz = () => {
     }, 1000);
   }, []);
 
-  const handleOptionSelect = (e, option: number, isMultiSelect: boolean) => {
+  const handleOptionSelect = (
+    e: React.ChangeEvent<HTMLInputElement>,
+    option: number,
+    isMultiSelect: boolean
+  ) => {
     if (e.target.checked) {
       if (selectedOption) {
         setSelectedOption([...selectedOption, option]);
@@ -40,10 +40,10 @@ const Quiz = () => {
     }
   };
 
-  const validateAnswer = async () => {
+  const submitAnswer = async () => {
     const { method, path } = api.submitAnswer;
     await request<{ validAnswer: boolean }>({
-      path,
+      path: `${path}?user=${userId}`,
       method,
       payload: {
         question: currentQuestion,
@@ -93,7 +93,7 @@ const Quiz = () => {
   }, [currentQuestion, selectedOption]);
 
   const handleNextQuestion = async () => {
-    await validateAnswer();
+    await submitAnswer();
     if (currentQuestion !== questions.length - 1) {
       setCurrentQuestion((current) => current + 1);
       setSelectedOption([]);
@@ -101,11 +101,10 @@ const Quiz = () => {
     } else {
       const { path, method } = api.submitQuiz;
       const response = await request({
-        path,
+        path: `${path}?user=${userId}`,
         method,
-        payload: {}, 
       });
-      dispatch({ type: "SUBMIT_ANSWER", payload: response });
+      dispatch({ type: "COMPLETE_QUIZ", payload: response });
       router.push("/report");
     }
   };

@@ -6,9 +6,9 @@ export default function handler(
 ) {
   if (req.method === "POST") {
     res.status(201).json({
-      correctAnswer: 2,
-      incorrectAnswer: 3,
-      totalScore: 10
+      correctAnswer: 3,
+      incorrectAnswer: 2,
+      totalScore: 60
     });
   }
 }

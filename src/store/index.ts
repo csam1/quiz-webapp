@@ -7,7 +7,8 @@ export const initialState: StoreState = {
     incorrectAnswer: 0,
     totalScore: 0,
   },
-  isQuizInProgress: false
+  isQuizInProgress: false,
+  userId: (Math.random() * 1000).toFixed(0)
 };
 
 export default function reducer(
@@ -23,7 +24,7 @@ export default function reducer(
         isQuizInProgress: true
       };
     }
-    case "SUBMIT_ANSWER": {
+    case "COMPLETE_QUIZ": {
       const reports = action.payload as Reports;
       return {
         ...state,

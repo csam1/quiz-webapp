@@ -7,20 +7,26 @@ import { Question } from "../../store/types";
 import Image from "next/image";
 import upraisedLogo from "../../../assets/upraised-logo.svg";
 import quizLogo from "../../../assets/quiz-logo.svg";
-import styles from '../Quiz/styles.module.scss'
-import homeStyles from './styles.module.scss';
+import styles from "../Quiz/styles.module.scss";
+import homeStyles from "./styles.module.scss";
 
 const Home = () => {
-    const router = useRouter();
-  const { dispatch } = useContext(GlobalContext);
+  const router = useRouter();
+  const {
+    dispatch,
+    state: { userId },
+  } = useContext(GlobalContext);
   const handleStartQuiz = async () => {
     const { method, path } = api.fetchQuestions;
-    const response = await request<Question[]>({ path, method });
+    const response = await request<Question[]>({
+      path: `${path}?user=${userId}`,
+      method,
+    });
     dispatch({ type: "START_QUIZ", payload: response });
     router.push("/quiz");
   };
-    return(
-        <div className={homeStyles.startContainer}>
+  return (
+    <div className={homeStyles.startContainer}>
       <div className={homeStyles.startSection}>
         <div>
           <Image
@@ -46,7 +52,7 @@ const Home = () => {
         </button>
       </div>
     </div>
-    )
-}
+  );
+};
 
-export default Home;    
+export default Home;

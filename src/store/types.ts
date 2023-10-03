@@ -15,9 +15,10 @@ export interface StoreState {
   questions: Question[];
   reports: Reports;
   isQuizInProgress: boolean;
+  userId: string;
 }
 
-export type Actions = "START_QUIZ" | "SUBMIT_ANSWER" | "RESTART_QUIZ";
+export type Actions = "START_QUIZ" | "COMPLETE_QUIZ" | "RESTART_QUIZ";
 
 export interface StoreActions {
     type: Actions,
