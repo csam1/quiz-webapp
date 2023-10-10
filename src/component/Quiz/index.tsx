@@ -88,6 +88,7 @@ const Quiz = () => {
               value={index}
               checked={selectedOption.includes(index)}
               onChange={(e) => handleOptionSelect(e, index, isMultiSelect)}
+              data-testid={`input-${index}`}
             />
             <label className={styles.optionsLabel}>{option}</label>
           </div>

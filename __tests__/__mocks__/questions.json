@@ -1,0 +1,15 @@
+[
+    {
+      "question": "dis parturient montes nascetur ridiculus mus vivamus vestibulum sagittis sapien cum sociis natoque",
+      "options": ["Red", "Yellow", "Green", "Pink"],
+      "isMultiSelect": true,
+      "imageSrc": ""
+    },
+    {
+      "question": "curae duis faucibus accumsan odio curabitur convallis duis consequat dui nec",
+      "options": ["Indigo", "Orange", "Black", "White"],
+      "isMultiSelect": false,
+      "imageSrc": ""
+    }
+  ]
+  

@@ -51,7 +51,6 @@
 }
 .radioBtn {
   opacity: 0.0829846;
-  margin: 0px 0px 0px 40px;
   color: #000;
   border-color: black;
   cursor: pointer;
@@ -65,9 +64,8 @@
   border-radius: 20px;
   background: #f3f4fa;
   margin-bottom: 20px;
-}
-.optionsLabel {
   padding: 30px 20px;
+  column-gap: 12px;
 }
 .activeOptions {
   border: 4.444px solid #44b77b;
